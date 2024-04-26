@@ -3,12 +3,23 @@ import ProjectItem from "./ProjectItem";
 
 function ProjectList({ projects }) {
   console.log(projects);
+
+  const eachProject = projects?.map((projectItem) => {
+    return (
+      <ProjectItem
+        key={projectItem.id}
+        name={projectItem.name}
+        about={projectItem.about}
+        technologies={projectItem.technologies}
+      />
+    );
+  })
   return (
     <div id="projects">
       <h2>My Projects</h2>
-      <div id="project-list">{/* render ProjectItem components here */}</div>
+      <div id="project-list">{eachProject}</div>
     </div>
   );
 }
 
-export default ProjectList;
+export default ProjectList; 
